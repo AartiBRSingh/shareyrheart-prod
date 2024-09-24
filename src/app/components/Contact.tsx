@@ -1,19 +1,11 @@
 import React from "react";
-import Image from "next/image";
+
 import Button from "../components/Button";
 import { FaPhone } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
 import Link from "next/link";
 
 // Assuming Button component props
-interface ButtonProps {
-  label: string;
-  bgColor: string;
-  textColor: string;
-  logo?: React.ReactNode;
-  hoverBgColor: string;
-  hoverTextColor: string;
-}
 
 const Contact: React.FC = () => {
   return (
