@@ -17,7 +17,7 @@ const CustomerStories: React.FC<CustomerStoriesProps> = ({ stories }) => {
     <div id="testimonials" className="bg-white p-8 max-w-6xl mx-auto">
       <div className="flex items-start mb-8">
         <span className="text-7xl text-pink-300 font-serif leading-none">
-          "
+          &quot;
         </span>
         <h2 className="text-4xl font-bold ml-2 leading-tight">
           Real Stories from

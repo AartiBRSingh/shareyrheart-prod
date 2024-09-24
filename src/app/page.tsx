@@ -1,5 +1,3 @@
-import Image from "next/image";
-import QuestionnaireInterface from "./components/QuestionnaireInterface";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";

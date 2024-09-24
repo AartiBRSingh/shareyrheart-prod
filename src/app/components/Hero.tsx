@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import Button from "./Button";
 import Typewriter from "typewriter-effect";
-import { FaWhatsapp, FaPhone } from "react-icons/fa6";
+import { FaPhone } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
 import Link from "next/link";
 
