@@ -5,8 +5,6 @@ import { FaPhone } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
 import Link from "next/link";
 
-// Assuming Button component props
-
 const Contact: React.FC = () => {
   return (
     <div id="contact">

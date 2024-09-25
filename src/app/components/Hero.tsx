@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="w-full flex justify-between items-center lg:py-20 lg:px-32 md:py-10 p-5 flex-wrap lg:gap-28 md:gap-4 gap-28 bg-red-100">
+    <div className="w-full flex justify-center items-center lg:py-20 lg:px-32 md:py-10 p-5 flex-wrap lg:gap-28 md:gap-4 gap-28 bg-red-100">
       <div className="lg:w-[600px] md:w-[400px]">
         <h1 className="lg:text-5xl md:text-4xl text-3xl font-bold">
           We care about
