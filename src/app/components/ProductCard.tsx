@@ -16,7 +16,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   title,
 }) => {
   return (
-    <div className="bg-white flex flex-wrap-reverse justify-center items-center rounded-xl lg:mb-20 m-10 max-lg:p-4 lg:w-fit lg:mx-auto lg:px-10 lg:gap-20 md:gap-10 shadow-xl">
+    <div className="bg-white flex flex-wrap-reverse justify-center items-center rounded-xl mb-10 max-lg:p-4 lg:w-fit lg:mx-auto lg:px-10 lg:gap-20 md:gap-10 shadow-xl">
       <div className="lg:w-[500px] md:w-[300px] max-md:text-center">
         <h2 className="lg:text-3xl text-2xl font-bold text-wrap lg:mb-4">
           {title}

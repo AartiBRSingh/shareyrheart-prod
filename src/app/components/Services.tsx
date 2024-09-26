@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ProductCard from "./ProductCard";
 
 interface Product {
@@ -9,6 +9,10 @@ interface Product {
 }
 
 const Services: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const servicesRef = useRef<HTMLDivElement>(null);
+
   const products: { [key: string]: Product } = {
     employee: {
       productIMG: "/employee.jpg",
@@ -36,8 +40,66 @@ const Services: React.FC = () => {
     setSelectedCategory(category);
   };
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setIsVisible(true);
+          setHasAnimated(true);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    if (servicesRef.current) {
+      observer.observe(servicesRef.current);
+    }
+
+    return () => {
+      if (servicesRef.current) {
+        observer.unobserve(servicesRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
+  const BackgroundSVG = () => (
+    <svg
+      className="absolute inset-0 -z-10 h-full w-full stroke-red-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+      aria-hidden="true"
+    >
+      <defs>
+        <pattern
+          id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
+          width="200"
+          height="200"
+          x="50%"
+          y="-1"
+          patternUnits="userSpaceOnUse"
+        >
+          <path d="M.5 200V.5H200" fill="none" />
+        </pattern>
+      </defs>
+      <rect
+        width="100%"
+        height="100%"
+        strokeWidth="0"
+        fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)"
+      />
+    </svg>
+  );
+
   return (
-    <div>
+    <div
+      id="products"
+      ref={servicesRef}
+      className={`transition-opacity duration-1000 ${
+        isVisible ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <h1 className="text-4xl font-bold text-center my-10">Our Services</h1>
       <div className="flex justify-center space-x-8 mb-12">
         <button
