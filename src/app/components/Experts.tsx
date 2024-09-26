@@ -46,6 +46,7 @@ const Experts = () => {
       <div className="flex justify-center mt-10">
         <Link
           href={"https://shareyrheart.com/mental-health-experts-search.php"}
+          target="_blank"
         >
           <Button
             label="View All"
