@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Testimonials from "./components/Testimonials";
 import VideoTestimony from "./components/VideoTestimony";
+import Experts from "./components/Experts";
 // import Contact from "./components/Contact";
 
 const BackgroundSVG = () => (
@@ -42,6 +43,7 @@ export default function Home() {
         <BackgroundSVG />
         <Testimonials />
         <Services />
+        <Experts />
         <VideoTestimony />
         {/* <Contact /> */}
         <Footer />

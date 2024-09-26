@@ -82,12 +82,11 @@ const CustomerStories: React.FC<CustomerStoriesProps> = ({ stories }) => {
       <p className="text-gray-600 mb-8">Get inspired by these stories.</p>
 
       <div className="flex flex-col md:flex-row gap-6">
-        {/* Left larger story */}
-        <div className="md:w-1/2 bg-red-100 p-8 rounded-xl">
+        <div className="md:w-1/2 bg-red-100 p-8 rounded-xl md:h-[500px] h-[400px]">
           <img
             src={rotatedStories[0].logo}
             alt={rotatedStories[0].companyName}
-            className="h-12 w-12 rounded-full mb-6"
+            className="h-12 w-12 rounded-full mb-6 object-cover"
           />
           <p className="text-gray-800 mb-6 text-lg">
             {rotatedStories[0].content}
@@ -98,9 +97,7 @@ const CustomerStories: React.FC<CustomerStoriesProps> = ({ stories }) => {
           </div>
           <p className="text-gray-600 text-sm ml-4">{rotatedStories[0].role}</p>
         </div>
-
-        {/* Right stacked stories */}
-        <div className="md:w-1/2 flex flex-col justify-between">
+        <div className="md:w-1/2 flex flex-col justify-between ">
           {rotatedStories.slice(1).map((story, index) => (
             <div
               key={index}
@@ -109,7 +106,7 @@ const CustomerStories: React.FC<CustomerStoriesProps> = ({ stories }) => {
               <img
                 src={story.logo}
                 alt={story.companyName}
-                className="h-8 w-8 rounded-full mb-4"
+                className="h-8 w-8 rounded-full mb-4 object-cover"
               />
               <p className="text-gray-800 mb-4">{story.content}</p>
               <div className="flex items-center">

@@ -74,7 +74,9 @@ const Services: React.FC = () => {
         isVisible ? "opacity-100" : "opacity-0"
       }`}
     >
-      <h1 className="text-4xl font-bold text-center my-10">Our Services</h1>
+      <h1 className="text-4xl font-bold text-center mt-20 mb-10">
+        Our Services
+      </h1>
       <div className="flex justify-center space-x-8 mb-12">
         <button
           className={`text-lg font-semibold px-6 py-2 transition-colors duration-300 ${

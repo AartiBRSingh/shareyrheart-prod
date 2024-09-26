@@ -59,7 +59,7 @@ const VideoTestimony = () => {
   };
 
   return (
-    <div className="relative overflow-hidden py-24 sm:py-32">
+    <div className="relative overflow-hidden py-20">
       <div
         ref={ref}
         className={`relative mx-auto max-w-7xl px-6 lg:px-8 transition-all duration-1000 ${
