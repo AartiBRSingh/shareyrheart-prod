@@ -31,7 +31,7 @@ const Services: React.FC = () => {
     },
   };
 
-  type Category = "employee" | "student" | "self";
+  // type Category = "employee" | "student" | "self";
 
   // const [selectedCategory, setSelectedCategory] = useState<Category>("employee");
 
