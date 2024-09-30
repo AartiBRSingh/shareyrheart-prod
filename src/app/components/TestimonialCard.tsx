@@ -5,7 +5,6 @@ interface TestimonialProps {
   imageSrc: string;
   title: string;
   review: string;
-  rating: number;
 }
 
 const Testimonial: React.FC<TestimonialProps> = ({
@@ -13,7 +12,6 @@ const Testimonial: React.FC<TestimonialProps> = ({
   review,
   imageSrc,
   title,
-  rating,
 }) => {
   return (
     <div className="lg:w-[500px] md:w-[400px] w-[300px] flex-shrink-0 snap-center bg-white rounded-lg overflow-hidden shadow-lg relative m-2">

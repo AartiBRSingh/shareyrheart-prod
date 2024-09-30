@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Check } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import {  useRouter, useSearchParams } from "next/navigation";
 
 const questions: string[] = [
   "I often feel overwhelmed by work-related stress.",

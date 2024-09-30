@@ -33,11 +33,11 @@ const Services: React.FC = () => {
 
   type Category = "employee" | "student" | "self";
 
-  const [selectedCategory, setSelectedCategory] = useState<Category>("employee");
+  // const [selectedCategory, setSelectedCategory] = useState<Category>("employee");
 
-  const handleCategoryChange = (category: Category) => {
-    setSelectedCategory(category);
-  };
+  // const handleCategoryChange = (category: Category) => {
+  //   setSelectedCategory(category);
+  // };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
