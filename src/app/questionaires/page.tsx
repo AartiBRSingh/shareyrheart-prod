@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import QuestionnaireInterface from "../components/QuestionnaireInterface";
 
 const page = () => {
   return (
-    <div>
-      <QuestionnaireInterface />
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+    <QuestionnaireInterface />
+  </Suspense>
   );
 };
 
