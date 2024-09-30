@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, Check } from "lucide-react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const questions: string[] = [
   "I often feel overwhelmed by work-related stress.",
@@ -19,6 +20,18 @@ const QuestionnaireInterface: React.FC = () => {
   const [answers, setAnswers] = useState<Answer[]>(
     Array(questions.length).fill(null)
   );
+  const router = useRouter()
+  const serachParams = useSearchParams()  
+const userType = serachParams.get('userType')
+
+useEffect(()=>{if(typeof window!=='undefined'){
+  const userToken = sessionStorage.getItem("token")
+  const couponCode = sessionStorage.getItem("couponCode")
+  if (!userToken && !couponCode) {
+    router.push(`login?userType=${userType}`)
+  }
+
+}},[])
 
   const handleAnswer = (value: Answer) => {
     const newAnswers = [...answers];
@@ -42,12 +55,9 @@ const QuestionnaireInterface: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Sticky Navbar */}
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>
-
-      {/* Main content */}
       <div className="bg-gray-50 flex-grow flex justify-center items-center">
         <main className="flex-grow container mx-auto px-4 py-8">
           <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto">
@@ -133,8 +143,6 @@ const QuestionnaireInterface: React.FC = () => {
           </div>
         </main>
       </div>
-
-      {/* Sticky Footer */}
       <div className="mt-auto">
         <Footer />
       </div>

@@ -8,12 +8,14 @@ interface ProductCardProps {
   productIMG: string;
   desc: string;
   title: string;
+  userType:string
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
   productIMG,
   desc,
   title,
+  userType
 }) => {
   return (
     <div className="bg-white flex flex-wrap-reverse justify-center items-center rounded-xl mb-10 max-lg:p-4 lg:w-fit lg:mx-auto lg:px-10 lg:gap-20 md:gap-10 shadow-xl">
@@ -24,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <p className="font-medium lg:text-base md:text-sm text-xs text-gray-600 lg:mt-4 lg:mb-6 my-2">
           {desc}
         </p>
-        <Link href="/questionaires">
+        <Link href={`/questionaires?userType=${userType}`}>
           <Button
             label="Attempt Questionaires"
             bgColor="inherit"

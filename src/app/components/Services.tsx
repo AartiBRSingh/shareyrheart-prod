@@ -33,8 +33,7 @@ const Services: React.FC = () => {
 
   type Category = "employee" | "student" | "self";
 
-  const [selectedCategory, setSelectedCategory] =
-    useState<Category>("employee");
+  const [selectedCategory, setSelectedCategory] = useState<Category>("employee");
 
   const handleCategoryChange = (category: Category) => {
     setSelectedCategory(category);
@@ -70,14 +69,14 @@ const Services: React.FC = () => {
     <div
       id="products"
       ref={servicesRef}
-      className={`transition-opacity duration-1000 ${
-        isVisible ? "opacity-100" : "opacity-0"
-      }`}
+      className={`transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0"}`}
     >
-      <h1 className="text-4xl font-bold text-center mt-20 mb-10">
+      <h1 className="text-4xl font-bold text-center mb-10">
         Our Services
       </h1>
-      <div className="flex justify-center space-x-8 mb-12">
+
+      {/* Uncomment and use this if you want category selection */}
+      {/* <div className="flex justify-center space-x-8 mb-12">
         <button
           className={`text-lg font-semibold px-6 py-2 transition-colors duration-300 ${
             selectedCategory === "employee"
@@ -108,14 +107,21 @@ const Services: React.FC = () => {
         >
           Self
         </button>
-      </div>
+      </div> */}
 
-      <div className="flex justify-center">
-        <ProductCard
-          productIMG={products[selectedCategory].productIMG}
-          title={products[selectedCategory].title}
-          desc={products[selectedCategory].desc}
-        />
+      <div className="">
+        {Object.keys(products).map((key) => {
+          const product = products[key];
+          return (
+            <ProductCard
+              key={key}
+              productIMG={product.productIMG}
+              title={product.title}
+              desc={product.desc}
+              userType={key}
+            />
+          );
+        })}
       </div>
     </div>
   );
